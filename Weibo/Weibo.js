@@ -104,12 +104,13 @@ if ($.isRequest) {
         $.write($.realupdate, 'update')
         if (err instanceof ERR.CookieError) {
             $.notify("微博通知 - Cookie 错误", "", err.message, 'https://m.weibo.cn')
-        } else if (err instanceof ERR.BoxError) {
-            $.notify("微博通知 - 信息填写错误", "", err.message, boxhost + '/app/zZ.Weibo')
-        } else {
-            $.notify("微博通知 - 出现错误", "", JSON.stringify(err, Object.getOwnPropertyNames(err)))
-            $.error(JSON.stringify(err, Object.getOwnPropertyNames(err)))
-        }
+        } 
+//        else if (err instanceof ERR.BoxError) {
+//            $.notify("微博通知 - 信息填写错误", "", err.message, boxhost + '/app/zZ.Weibo')
+//        } else {
+//            $.notify("微博通知 - 出现错误", "", JSON.stringify(err, Object.getOwnPropertyNames(err)))
+//            $.error(JSON.stringify(err, Object.getOwnPropertyNames(err)))
+//        }
     }).finally(() => $.done())
 }
 
